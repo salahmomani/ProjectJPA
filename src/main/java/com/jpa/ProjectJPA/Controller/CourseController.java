@@ -16,14 +16,12 @@ import java.util.List;
 
 public class CourseController {
     private final CourseService courseService;
-    private final StudentService studentService;
-    private final ExamService examService;
+
     private final CourseMapper courseMapper;
 @Autowired
-    public CourseController(CourseService courseService, StudentService studentService, ExamService examService, CourseMapper courseMapper) {
+    public CourseController(CourseService courseService, CourseMapper courseMapper) {
         this.courseService = courseService;
-        this.studentService = studentService;
-        this.examService = examService;
+
         this.courseMapper = courseMapper;
     }
 

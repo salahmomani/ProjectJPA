@@ -36,13 +36,13 @@ public class ExamController {
     }
 
     @GetMapping("/course/{courseId}")
-    public List<Exam> getByCourse(@PathVariable Long courseId) {
-        return examService.getByCourseId(courseId);
+    public List<ExamResponseDTO> getByCourse(@PathVariable Long courseId) {
+        return examService.getByCourseId(courseId).stream().map(examMapper::toDTO).toList();
     }
 
     @GetMapping("/student/{studentId}")
-    public List<Exam> getByStudent(@PathVariable Long studentId) {
-        return examService.getByStudent(studentId);
+    public List<ExamResponseDTO> getByStudent(@PathVariable Long studentId) {
+        return examService.getByStudent(studentId).stream().map(examMapper::toDTO).toList();
     }
 
 
